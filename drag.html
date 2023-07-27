@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="drag.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DragDrop</title>
+</head>
+<body>
+    <div class="big">
+        <p>Front<br>end<br>azerbaijan</p>
+        <div class="droptarget" ondragover="allowDrop(event)">
+    <span style="--i:1;background-color: red;" draggable="true" id="dragtarget"></span>
+    <span style="--i:3;background-color: blue;" draggable="true" id="dragtarget"></span>
+    <span style="--i:5;background-color: slategray;" draggable="true" id="dragtarget"></span>
+    <span style="--i:7;background-color: orange;" draggable="true" id="dragtarget"></span>
+    <span style="--i:9;background-color: purple;" draggable="true" id="dragtarget"></span>
+    <span style="--i:11;background-color: lightseagreen;" draggable="true" id="dragtarget"></span>
+    <span style="--i:13;background-color: palegreen;" draggable="true" id="dragtarget"></span>
+    <span style="--i:15;background-color: darkred;" draggable="true" id="dragtarget"></span>
+        </div>
+        <div class="drop" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    </div> 
+
+
+    <script>
+
+        let x=document.querySelector('.drop');
+        let ys=document.querySelectorAll('span');
+
+        function allowDrop(event){
+            event.preventDefault();
+        }
+
+    function drop(event){
+        ys.forEach(function(y){
+            y.addEventListener('dragend',function(e){
+                x.style.backgroundColor=y.style.backgroundColor
+            })
+        })
+    }
+
+    </script>
+</body>
+</html>

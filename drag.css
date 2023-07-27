@@ -1,0 +1,57 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+.big{
+    position: relative;
+    width: 300px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.big p{
+    position: absolute;
+    font-size: 35px;
+    text-transform: uppercase;
+    display: flex;
+    text-align: center;
+    color: white;
+    z-index: 10;
+}
+.drop{
+    position: absolute;
+    width: 300px;
+    height: 400px;
+    border: 2px solid black;
+    border-radius: 20px;
+}
+.droptarget{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid black;
+    z-index: 10;
+    background-color: white;
+    bottom: 0;
+    width: 300px;
+    height: 35px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+span{
+    position: absolute;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    left: calc(17.5px * var(--i));
+}
